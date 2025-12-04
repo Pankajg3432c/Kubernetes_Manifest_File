@@ -20,14 +20,6 @@ spec:
         image: trainwithshubham/notes-app-k8s
         ports:
         - containerPort: 8000
-        volumeMounts:
-        - name: notes-storage
-          mountPath: /app/data
-        volumes:
-      - name: notes-storage
-        persistentVolumeClaim:
-          claimName: nginx-pv-claim 
-
         resources:
           requests:
             cpu: 100m
@@ -47,6 +39,5 @@ spec:
             port: 8000
           initialDelaySeconds: 5
           periodSeconds: 5
-        
-
           
+           
